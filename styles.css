@@ -794,19 +794,27 @@ html.presentation-mode .presentation-toolbar {
   html.presentation-mode .presentation-toolbar { bottom: 88px; }
 }
 
-
-/* === V4.6: control Inicio en modo presentación === */
-.presentation-toolbar #homeScene {
+/* === V4.6: controles Inicio y Salir en modo presentación === */
+.presentation-toolbar #homeScene,
+.presentation-toolbar #exitPresentation {
   min-width: 72px;
   padding-inline: 16px;
   background: #ffffff;
   border-color: #ffffff;
   color: #0f172a;
 }
+
 .presentation-toolbar #homeScene:hover,
-.presentation-toolbar #homeScene:focus-visible {
+.presentation-toolbar #homeScene:focus-visible,
+.presentation-toolbar #exitPresentation:hover,
+.presentation-toolbar #exitPresentation:focus-visible {
   background: #f1f5f9;
 }
+
 @media (max-width: 640px) {
-  .presentation-toolbar #homeScene { min-width: 64px; padding-inline: 12px; }
+  .presentation-toolbar #homeScene,
+  .presentation-toolbar #exitPresentation {
+    min-width: 64px;
+    padding-inline: 12px;
+  }
 }
