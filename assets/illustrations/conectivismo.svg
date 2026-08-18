@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="t d">
+<title id="t">Red de aprendizaje conectivista</title><desc id="d">Red abstracta de nodos conectados entre sí y con un nodo central, sin texto integrado.</desc>
+<rect width="720" height="480" rx="32" fill="#f7fcfe"/>
+<g stroke="#b8cad8" stroke-width="4" fill="none" stroke-linecap="round"><path d="M150 120 360 240 162 346"/><path d="M570 120 360 240 558 350"/><path d="M210 74 360 240 510 82"/><path d="M360 240 360 86"/><path d="M360 240 360 398"/><path d="M150 120 210 74 360 86 510 82 570 120"/><path d="M162 346 360 398 558 350"/></g>
+<circle cx="360" cy="240" r="74" fill="#111827"/>
+<circle cx="150" cy="120" r="46" fill="#d76c00"/><circle cx="570" cy="120" r="46" fill="#0f6f9f"/><circle cx="162" cy="346" r="46" fill="#38a9bd"/><circle cx="558" cy="350" r="46" fill="#5a5670"/>
+<circle cx="210" cy="74" r="30" fill="#0f6f9f"/><circle cx="360" cy="86" r="30" fill="#d76c00"/><circle cx="510" cy="82" r="30" fill="#38a9bd"/><circle cx="360" cy="398" r="34" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+<g fill="#fff"><circle cx="338" cy="226" r="8"/><circle cx="382" cy="226" r="8"/><circle cx="360" cy="260" r="8"/></g>
+</svg>

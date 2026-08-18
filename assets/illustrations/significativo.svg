@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="t d">
+<title id="t">Relaciones conceptuales del aprendizaje significativo</title><desc id="d">Diagrama abstracto con nodos jerárquicos conectados, sin texto integrado.</desc>
+<rect width="720" height="480" rx="32" fill="#fffaf5"/>
+<circle cx="94" cy="100" r="62" fill="#fde8d4"/><circle cx="632" cy="386" r="78" fill="#ddf4f8"/>
+<g stroke="#94a3b8" stroke-width="5" fill="none" stroke-linecap="round"><path d="M360 126V188"/><path d="M360 188H180"/><path d="M360 188H540"/><path d="M180 258H116"/><path d="M180 258H248"/><path d="M540 258H472"/><path d="M540 258H606"/><path d="M248 258V334"/><path d="M472 258V334"/><path d="M248 334H472"/></g>
+<rect x="250" y="70" width="220" height="60" rx="18" fill="#7b1534"/>
+<rect x="110" y="226" width="140" height="64" rx="18" fill="#d76c00"/>
+<rect x="470" y="226" width="140" height="64" rx="18" fill="#0f6f9f"/>
+<rect x="64" y="334" width="104" height="48" rx="16" fill="#ffffff" stroke="#cfd8e3" stroke-width="3"/>
+<rect x="196" y="334" width="104" height="48" rx="16" fill="#ffffff" stroke="#cfd8e3" stroke-width="3"/>
+<rect x="420" y="334" width="104" height="48" rx="16" fill="#ffffff" stroke="#cfd8e3" stroke-width="3"/>
+<rect x="554" y="334" width="104" height="48" rx="16" fill="#ffffff" stroke="#cfd8e3" stroke-width="3"/>
+<rect x="278" y="410" width="164" height="42" rx="18" fill="#38a9bd"/>
+</svg>
