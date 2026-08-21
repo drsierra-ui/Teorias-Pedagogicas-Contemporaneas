@@ -818,3 +818,16 @@ html.presentation-mode .presentation-toolbar {
     padding-inline: 12px;
   }
 }
+
+.source-line {
+  width: 100%;
+  margin: 18px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid #d9e0e7;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #64748b;
+
+  text-align: left;
+}
