@@ -833,23 +833,37 @@ html.presentation-mode .presentation-toolbar {
 }
 /* ============================================================
    SECCIÓN ANÁLISIS
-   Ajuste definitivo del encabezado, título y texto introductorio
+   CORRECCIÓN DEFINITIVA
+   Mantiene el ancho institucional del sitio
    ============================================================ */
 
+
+/* ------------------------------------------------------------
+   CONTENEDOR PRINCIPAL
+   IMPORTANTE:
+   No usar width:100% porque .synthesis-grid también posee
+   la clase .shell y debe conservar el ancho máximo institucional.
+   ------------------------------------------------------------ */
+
 #sintesis .synthesis-grid {
-  width: 100%;
-  max-width: 100%;
+  width: min(calc(100% - 40px), var(--shell));
+  max-width: var(--shell);
+  margin-inline: auto;
+
+  display: grid;
+  gap: 22px;
 }
 
 
 /* ------------------------------------------------------------
    ENCABEZADO
+   Puede utilizar todo el ancho DEL CONTENEDOR, no de la pantalla.
    ------------------------------------------------------------ */
 
 #sintesis .section-heading {
   width: 100%;
-  max-width: none;
-  margin: 0 0 30px 0;
+  max-width: 100%;
+  margin: 0 0 28px 0;
 }
 
 
@@ -861,19 +875,18 @@ html.presentation-mode .presentation-toolbar {
 
 
 /* ------------------------------------------------------------
-   TÍTULO
+   TÍTULO PRINCIPAL
    ------------------------------------------------------------ */
 
 #sintesis .section-heading h2 {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
 
   margin: 0 0 14px 0;
 
-  font-size: clamp(2.15rem, 3.25vw, 3rem);
-  line-height: 1.07;
+  font-size: clamp(2.15rem, 3vw, 3rem);
+  line-height: 1.06;
   letter-spacing: -0.035em;
-
   font-weight: 900;
 
   text-wrap: balance;
@@ -883,40 +896,55 @@ html.presentation-mode .presentation-toolbar {
 
 
 /* ------------------------------------------------------------
-   PÁRRAFO INTRODUCTORIO
+   TEXTO INTRODUCTORIO
    ------------------------------------------------------------ */
 
 #sintesis .section-heading > p:not(.eyebrow) {
   width: 100%;
-  max-width: 1100px;
+  max-width: 100%;
 
   margin: 0;
 
+  color: var(--muted);
   font-size: 1.04rem;
   line-height: 1.65;
-
-  color: var(--muted);
 }
 
 
 /* ============================================================
-   CONTENIDO DEL ANÁLISIS
+   BLOQUE DEL ANÁLISIS
    ============================================================ */
 
 #sintesis .synthesis-prose {
   width: 100%;
   max-width: 100%;
+
+  display: grid;
+  gap: 16px;
+
+  padding: 24px;
+
+  border: 1px solid var(--line);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fbfcfe 0%,
+      #f7fafc 100%
+    );
 }
+
+
+/* Párrafos del análisis */
 
 #sintesis .synthesis-prose p {
-  margin: 0 0 18px 0;
+  margin: 0;
+
+  color: #334455;
 
   font-size: 1rem;
-  line-height: 1.7;
-}
-
-#sintesis .synthesis-prose p:last-child {
-  margin-bottom: 0;
+  line-height: 1.72;
 }
 
 
@@ -926,6 +954,40 @@ html.presentation-mode .presentation-toolbar {
 
 #sintesis .synthesis-cards {
   width: 100%;
+  max-width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+
+#sintesis .synthesis-card {
+  min-width: 0;
+  padding: 20px;
+
+  border: 1px solid var(--line);
+  border-radius: 18px;
+
+  background: #ffffff;
+}
+
+
+#sintesis .synthesis-card b {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 1.05rem;
+}
+
+
+#sintesis .synthesis-card p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 
@@ -935,9 +997,15 @@ html.presentation-mode .presentation-toolbar {
 
 @media (max-width: 820px) {
 
-  #sintesis .section-heading {
-    margin-bottom: 26px;
+  #sintesis .synthesis-grid {
+    width: min(calc(100% - 28px), var(--shell));
   }
+
+
+  #sintesis .section-heading {
+    margin-bottom: 24px;
+  }
+
 
   #sintesis .section-heading h2 {
     font-size: clamp(2rem, 5.5vw, 2.65rem);
@@ -945,48 +1013,80 @@ html.presentation-mode .presentation-toolbar {
     letter-spacing: -0.03em;
   }
 
+
   #sintesis .section-heading > p:not(.eyebrow) {
-    max-width: 100%;
     font-size: 1rem;
     line-height: 1.6;
   }
 
+
+  #sintesis .synthesis-prose {
+    padding: 20px;
+  }
+
+
   #sintesis .synthesis-prose p {
     font-size: 1rem;
-    line-height: 1.65;
+    line-height: 1.68;
   }
+
+
+  #sintesis .synthesis-cards {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 
 /* ============================================================
-   CELULARES
+   CELULAR
    ============================================================ */
 
 @media (max-width: 560px) {
 
-  #sintesis .section-heading {
-    margin-bottom: 22px;
+  #sintesis .synthesis-grid {
+    width: calc(100% - 24px);
   }
+
+
+  #sintesis .section-heading {
+    margin-bottom: 20px;
+  }
+
 
   #sintesis .section-heading .eyebrow {
     margin-bottom: 8px;
   }
 
-  #sintesis .section-heading h2 {
-    font-size: clamp(1.8rem, 8vw, 2.25rem);
-    line-height: 1.09;
-    letter-spacing: -0.025em;
 
-    text-wrap: balance;
+  #sintesis .section-heading h2 {
+    margin-bottom: 12px;
+
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
   }
+
 
   #sintesis .section-heading > p:not(.eyebrow) {
     font-size: 0.98rem;
     line-height: 1.6;
   }
 
+
+  #sintesis .synthesis-prose {
+    padding: 18px;
+  }
+
+
   #sintesis .synthesis-prose p {
     font-size: 0.98rem;
     line-height: 1.65;
   }
+
+
+  #sintesis .synthesis-card {
+    padding: 18px;
+  }
+
 }
