@@ -833,202 +833,103 @@ html.presentation-mode .presentation-toolbar {
 }
 
 /* ============================================================
-   SECCIÓN ANÁLISIS - CORRECCIÓN DE ANCHO Y ALINEACIÓN
-   Mantiene el mismo contenedor visual que el resto del micrositio.
+   AJUSTE FINAL DE TITULOS DE SECCION
+   Ruta, Comparar, Aplicar y Analisis
    ============================================================ */
 
-/*
-   El HTML de esta sección usa un elemento que puede tener a la vez
-   las clases .shell y .synthesis-grid. Se fija el ancho de forma
-   explícita para evitar que cualquier regla previa expanda el bloque
-   hasta los bordes del viewport.
-*/
-#sintesis > .shell,
-#sintesis > .synthesis-grid,
-#sintesis > .shell.synthesis-grid {
-  width: calc(100% - 40px) !important;
-  max-width: 1180px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Estructura interna */
-#sintesis .synthesis-grid {
-  display: grid;
-  gap: 22px;
-}
-
-/* Encabezado del análisis */
+/* Los encabezados de estas cuatro secciones deben aprovechar todo
+   el ancho del contenedor institucional (.shell), evitando el limite
+   general de 850px que generaba saltos de linea innecesarios. */
+#explorar .section-heading,
+#comparar .section-heading,
+#aplicar .section-heading,
 #sintesis .section-heading {
   width: 100%;
-  max-width: 100%;
-  margin: 0 0 28px;
+  max-width: none;
+  margin-bottom: 28px;
 }
 
-#sintesis .section-heading .eyebrow {
-  margin: 0 0 10px;
-}
-
+/* Escala tipografica comun: mas contenida en escritorio y con
+   saltos de linea equilibrados cuando el titulo realmente lo requiere. */
+#explorar .section-heading h2,
+#comparar .section-heading h2,
+#aplicar .section-heading h2,
 #sintesis .section-heading h2 {
   width: 100%;
-  max-width: 100%;
-  margin: 0 0 14px;
-  font-size: clamp(2.1rem, 3vw, 3rem);
-  line-height: 1.06;
-  letter-spacing: -0.035em;
+  max-width: none;
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 2.1vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   font-weight: 900;
   text-wrap: balance;
   overflow-wrap: normal;
   word-break: normal;
 }
 
+/* El texto introductorio conserva una longitud de lectura comoda,
+   sin imponer el limite de 850px al titulo. */
+#explorar .section-heading > p:not(.eyebrow),
+#comparar .section-heading > p:not(.eyebrow),
+#aplicar .section-heading > p:not(.eyebrow),
 #sintesis .section-heading > p:not(.eyebrow) {
   width: 100%;
-  max-width: 100%;
+  max-width: 1080px;
   margin: 0;
-  color: var(--muted);
-  font-size: 1.04rem;
-  line-height: 1.65;
-}
-
-/* Desarrollo del análisis */
-#sintesis .synthesis-prose {
-  width: 100%;
-  max-width: 100%;
-  display: grid;
-  gap: 16px;
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: linear-gradient(180deg, #fbfcfe 0%, #f7fafc 100%);
-}
-
-#sintesis .synthesis-prose p {
-  margin: 0;
-  color: #334455;
-  font-size: 1rem;
-  line-height: 1.72;
-}
-
-/* Tarjetas inferiores */
-#sintesis .synthesis-cards {
-  width: 100%;
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-#sintesis .synthesis-card {
-  min-width: 0;
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: #fff;
-}
-
-#sintesis .synthesis-card b {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 1.05rem;
-}
-
-#sintesis .synthesis-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.02rem;
   line-height: 1.6;
+}
+
+/* Analisis conserva la estructura original del contenedor .shell.
+   No se redefine el ancho de .synthesis-grid para evitar que se
+   expanda de borde a borde. */
+#sintesis .synthesis-grid {
+  display: grid;
+  gap: 22px;
 }
 
 /* Tablet */
 @media (max-width: 820px) {
-  #sintesis > .shell,
-  #sintesis > .synthesis-grid,
-  #sintesis > .shell.synthesis-grid {
-    width: calc(100% - 28px) !important;
-  }
-
-  #sintesis .section-heading {
-    margin-bottom: 24px;
-  }
-
+  #explorar .section-heading h2,
+  #comparar .section-heading h2,
+  #aplicar .section-heading h2,
   #sintesis .section-heading h2 {
-    font-size: clamp(2rem, 5.5vw, 2.65rem);
-    line-height: 1.08;
-    letter-spacing: -0.03em;
+    font-size: clamp(1.75rem, 4.8vw, 2.25rem);
+    line-height: 1.1;
   }
 
+  #explorar .section-heading > p:not(.eyebrow),
+  #comparar .section-heading > p:not(.eyebrow),
+  #aplicar .section-heading > p:not(.eyebrow),
   #sintesis .section-heading > p:not(.eyebrow) {
+    max-width: 100%;
     font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  #sintesis .synthesis-prose {
-    padding: 20px;
-  }
-
-  #sintesis .synthesis-cards {
-    grid-template-columns: 1fr;
   }
 }
 
 /* Celular */
 @media (max-width: 560px) {
-  #sintesis > .shell,
-  #sintesis > .synthesis-grid,
-  #sintesis > .shell.synthesis-grid {
-    width: calc(100% - 24px) !important;
-  }
-
+  #explorar .section-heading,
+  #comparar .section-heading,
+  #aplicar .section-heading,
   #sintesis .section-heading {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
 
-  #sintesis .section-heading .eyebrow {
-    margin-bottom: 8px;
-  }
-
+  #explorar .section-heading h2,
+  #comparar .section-heading h2,
+  #aplicar .section-heading h2,
   #sintesis .section-heading h2 {
-    margin-bottom: 12px;
-    font-size: clamp(1.8rem, 8vw, 2.3rem);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
+    font-size: clamp(1.6rem, 7.4vw, 2rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
+  #explorar .section-heading > p:not(.eyebrow),
+  #comparar .section-heading > p:not(.eyebrow),
+  #aplicar .section-heading > p:not(.eyebrow),
   #sintesis .section-heading > p:not(.eyebrow) {
-    font-size: .98rem;
-    line-height: 1.6;
-  }
-
-  #sintesis .synthesis-prose {
-    padding: 18px;
-  }
-
-  #sintesis .synthesis-prose p,
-  #sintesis .synthesis-card p {
-    font-size: .98rem;
-  }
-
-  #sintesis .synthesis-card {
-    padding: 18px;
-  }
-}
-
-/*
-   El modo presentación usa un lienzo más ancho. Esta regla evita que
-   la corrección del modo normal limite innecesariamente la diapositiva.
-*/
-html.presentation-mode #sintesis > .shell,
-html.presentation-mode #sintesis > .synthesis-grid,
-html.presentation-mode #sintesis > .shell.synthesis-grid {
-  width: min(calc(100% - 50px), 1320px) !important;
-  max-width: 1320px !important;
-}
-
-@media (max-width: 820px) {
-  html.presentation-mode #sintesis > .shell,
-  html.presentation-mode #sintesis > .synthesis-grid,
-  html.presentation-mode #sintesis > .shell.synthesis-grid {
-    width: calc(100% - 28px) !important;
+    font-size: 0.98rem;
+    line-height: 1.58;
   }
 }
