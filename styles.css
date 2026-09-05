@@ -831,3 +831,172 @@ html.presentation-mode .presentation-toolbar {
 
   text-align: left;
 }
+/* ============================================================
+   AJUSTE ESPECÍFICO PARA LA SECCIÓN ANÁLISIS
+   Corrige el ancho del encabezado y mejora la distribución
+   del título y del texto introductorio.
+   ============================================================ */
+
+#sintesis .section-heading {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 28px;
+}
+
+
+/* ------------------------------------------------------------
+   TÍTULO PRINCIPAL DE LA SECCIÓN ANÁLISIS
+   ------------------------------------------------------------ */
+
+#sintesis .section-heading h2 {
+  width: 100%;
+  max-width: 100%;
+
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 16px;
+  margin-left: 0;
+
+  font-size: clamp(2.25rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+
+  text-wrap: balance;
+}
+
+
+/* ------------------------------------------------------------
+   TEXTO INTRODUCTORIO DE LA SECCIÓN ANÁLISIS
+   ------------------------------------------------------------ */
+
+#sintesis .section-heading > p:not(.eyebrow) {
+  width: 100%;
+  max-width: 1100px;
+
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+
+  font-size: 1.04rem;
+  line-height: 1.65;
+
+  color: var(--muted);
+}
+
+
+/* ------------------------------------------------------------
+   ETIQUETA "ANÁLISIS"
+   ------------------------------------------------------------ */
+
+#sintesis .section-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+
+/* ============================================================
+   AJUSTE DEL BLOQUE DE CONTENIDO DEL ANÁLISIS
+   Mantiene una lectura cómoda y una distribución equilibrada
+   ============================================================ */
+
+#sintesis .synthesis-prose {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+/* Mejora la legibilidad de los párrafos extensos */
+
+#sintesis .synthesis-prose p {
+  margin-top: 0;
+  margin-bottom: 18px;
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+
+/* Elimina margen extra del último párrafo */
+
+#sintesis .synthesis-prose p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 820px) {
+
+  #sintesis .section-heading {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #sintesis .section-heading h2 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(2rem, 6.5vw, 2.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+
+    text-wrap: balance;
+  }
+
+  #sintesis .section-heading > p:not(.eyebrow) {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  #sintesis .synthesis-prose p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+}
+
+
+/* ============================================================
+   CELULARES
+   ============================================================ */
+
+@media (max-width: 560px) {
+
+  #sintesis .section-heading {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 22px;
+  }
+
+  #sintesis .section-heading h2 {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 14px;
+
+    font-size: clamp(1.85rem, 8.5vw, 2.35rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+
+    text-wrap: balance;
+  }
+
+  #sintesis .section-heading > p:not(.eyebrow) {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  #sintesis .synthesis-prose p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+}
