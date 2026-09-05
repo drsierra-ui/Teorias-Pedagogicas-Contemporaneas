@@ -832,51 +832,65 @@ html.presentation-mode .presentation-toolbar {
   text-align: left;
 }
 /* ============================================================
-   AJUSTE ESPECÍFICO PARA LA SECCIÓN ANÁLISIS
-   Corrige el ancho del encabezado y mejora la distribución
-   del título y del texto introductorio.
+   SECCIÓN ANÁLISIS
+   Ajuste definitivo del encabezado, título y texto introductorio
    ============================================================ */
 
-#sintesis .section-heading {
+#sintesis .synthesis-grid {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 28px;
 }
 
 
 /* ------------------------------------------------------------
-   TÍTULO PRINCIPAL DE LA SECCIÓN ANÁLISIS
+   ENCABEZADO
+   ------------------------------------------------------------ */
+
+#sintesis .section-heading {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 30px 0;
+}
+
+
+/* Etiqueta ANÁLISIS */
+
+#sintesis .section-heading .eyebrow {
+  margin: 0 0 10px 0;
+}
+
+
+/* ------------------------------------------------------------
+   TÍTULO
    ------------------------------------------------------------ */
 
 #sintesis .section-heading h2 {
   width: 100%;
-  max-width: 100%;
+  max-width: none;
 
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 16px;
-  margin-left: 0;
+  margin: 0 0 14px 0;
 
-  font-size: clamp(2.25rem, 4vw, 3.4rem);
-  line-height: 1.05;
+  font-size: clamp(2.15rem, 3.25vw, 3rem);
+  line-height: 1.07;
   letter-spacing: -0.035em;
 
+  font-weight: 900;
+
   text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 
 /* ------------------------------------------------------------
-   TEXTO INTRODUCTORIO DE LA SECCIÓN ANÁLISIS
+   PÁRRAFO INTRODUCTORIO
    ------------------------------------------------------------ */
 
 #sintesis .section-heading > p:not(.eyebrow) {
   width: 100%;
   max-width: 1100px;
 
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
 
   font-size: 1.04rem;
   line-height: 1.65;
@@ -885,18 +899,8 @@ html.presentation-mode .presentation-toolbar {
 }
 
 
-/* ------------------------------------------------------------
-   ETIQUETA "ANÁLISIS"
-   ------------------------------------------------------------ */
-
-#sintesis .section-heading .eyebrow {
-  margin-bottom: 10px;
-}
-
-
 /* ============================================================
-   AJUSTE DEL BLOQUE DE CONTENIDO DEL ANÁLISIS
-   Mantiene una lectura cómoda y una distribución equilibrada
+   CONTENIDO DEL ANÁLISIS
    ============================================================ */
 
 #sintesis .synthesis-prose {
@@ -904,22 +908,24 @@ html.presentation-mode .presentation-toolbar {
   max-width: 100%;
 }
 
-
-/* Mejora la legibilidad de los párrafos extensos */
-
 #sintesis .synthesis-prose p {
-  margin-top: 0;
-  margin-bottom: 18px;
+  margin: 0 0 18px 0;
 
   font-size: 1rem;
   line-height: 1.7;
 }
 
-
-/* Elimina margen extra del último párrafo */
-
 #sintesis .synthesis-prose p:last-child {
   margin-bottom: 0;
+}
+
+
+/* ============================================================
+   TARJETAS DE SÍNTESIS
+   ============================================================ */
+
+#sintesis .synthesis-cards {
+  width: 100%;
 }
 
 
@@ -930,25 +936,17 @@ html.presentation-mode .presentation-toolbar {
 @media (max-width: 820px) {
 
   #sintesis .section-heading {
-    width: 100%;
-    max-width: 100%;
+    margin-bottom: 26px;
   }
 
   #sintesis .section-heading h2 {
-    width: 100%;
-    max-width: 100%;
-
-    font-size: clamp(2rem, 6.5vw, 2.8rem);
+    font-size: clamp(2rem, 5.5vw, 2.65rem);
     line-height: 1.08;
-    letter-spacing: -0.025em;
-
-    text-wrap: balance;
+    letter-spacing: -0.03em;
   }
 
   #sintesis .section-heading > p:not(.eyebrow) {
-    width: 100%;
     max-width: 100%;
-
     font-size: 1rem;
     line-height: 1.6;
   }
@@ -957,7 +955,6 @@ html.presentation-mode .presentation-toolbar {
     font-size: 1rem;
     line-height: 1.65;
   }
-
 }
 
 
@@ -968,28 +965,22 @@ html.presentation-mode .presentation-toolbar {
 @media (max-width: 560px) {
 
   #sintesis .section-heading {
-    width: 100%;
-    max-width: 100%;
     margin-bottom: 22px;
   }
 
+  #sintesis .section-heading .eyebrow {
+    margin-bottom: 8px;
+  }
+
   #sintesis .section-heading h2 {
-    width: 100%;
-    max-width: 100%;
-
-    margin-bottom: 14px;
-
-    font-size: clamp(1.85rem, 8.5vw, 2.35rem);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.8rem, 8vw, 2.25rem);
+    line-height: 1.09;
+    letter-spacing: -0.025em;
 
     text-wrap: balance;
   }
 
   #sintesis .section-heading > p:not(.eyebrow) {
-    width: 100%;
-    max-width: 100%;
-
     font-size: 0.98rem;
     line-height: 1.6;
   }
@@ -998,5 +989,4 @@ html.presentation-mode .presentation-toolbar {
     font-size: 0.98rem;
     line-height: 1.65;
   }
-
 }
